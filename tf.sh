@@ -14,8 +14,13 @@ if [ ! -d '/runtime/bazel/' ]; then
 	cd /runtime/
     git clone https://github.com/bazelbuild/bazel.git
 fi
-cd bazel
-./compile.sh
+
+if [ ! -f '/runtime/bazel/output/bazel' ]; then
+  cd /runtime/bazel
+  ./compile.sh
+else
+  echo 'bazel binary already exists.'
+fi
 echo 'export PATH=/runtime/bazel/output/:$PATH' >> ~/.bashrc
 source ~/.bashrc
 #clone tenforflow source code
