@@ -6,7 +6,7 @@ libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev cmake \
 protobuf-compiler libgflags-dev libgoogle-glog-dev liblmdb-dev \
 clang liblapack-dev libatlas-base-dev libblas-dev gfortran graphviz
 echo 'install python-dependencies...'
-py-denp.sh
+./py-denp.sh
 
 echo 'checkout caffe source code and build..'
 cd ~/
