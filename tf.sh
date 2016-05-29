@@ -17,6 +17,7 @@ fi
 
 if [ ! -f '/runtime/bazel/output/bazel' ]; then
   cd /runtime/bazel
+  git checkout tags/0.2.0
   ./compile.sh
 else
   echo 'bazel binary already exists.'
@@ -28,6 +29,8 @@ if [ ! -d '/runtime/tensorflow/' ]; then
 	cd /runtime/
     git clone --recurse-submodules https://github.com/tensorflow/tensorflow
 fi
+cd /runtime/tensorflow
+git checkout tags/v0.8.0
 
 #configure and build tensorflow
 cd /runtime/tensorflow
