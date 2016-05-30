@@ -38,14 +38,19 @@ cd /runtime/tensorflow
 bazel build -c opt --config=cuda //tensorflow/cc:tutorials_example_trainer
 
 #build pip package
+echo 'building pip package...'
 bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
+echo 'installing pip package...'
 TF_WHL="$(ls /tmp/tensorflow_pkg/tensorflow*.whl)"
 pip install $TF_WHL
 
+echo 'setting up for development...'
 mkdir _python_build
 cd _python_build
 ln -s ../bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/* .
 ln -s ../tensorflow/tools/pip_package/* .
 python setup.py develop
+
+echo 'done!'
