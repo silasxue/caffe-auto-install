@@ -30,7 +30,6 @@ if [ ! -d '/runtime/tensorflow/' ]; then
     git clone --recurse-submodules https://github.com/tensorflow/tensorflow
 fi
 cd /runtime/tensorflow
-git checkout tags/v0.8.0
 
 #configure and build tensorflow
 cd /runtime/tensorflow
