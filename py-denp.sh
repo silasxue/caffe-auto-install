@@ -5,8 +5,8 @@ python get-pip.py
 pip install numpy scipy Cython 
 sudo ln -s /usr/local/lib/python2.7/dist-packages/numpy /usr/lib/python2.7/dist-packages/numpy
 echo '#numpy include path' >> ~/.bashrc
-echo 'export CPP_INCLUDE_PATH=/usr/local/lib/python2.7/dist-packages/numpy/core/include/numpy:$CPP_INCLUDE_PATH' >> ~/.bashrc
-echo 'export C_INCLUDE_PATH=/usr/local/lib/python2.7/dist-packages/numpy/core/include/numpy:$C_INCLUDE_PATH' >> ~/.bashrc
+echo 'export CPP_INCLUDE_PATH=/usr/local/lib/python2.7/dist-packages/numpy/core/include:$CPP_INCLUDE_PATH' >> ~/.bashrc
+echo 'export C_INCLUDE_PATH=/usr/local/lib/python2.7/dist-packages/numpy/core/include:$C_INCLUDE_PATH' >> ~/.bashrc
 pip install scikit-image scikit-learn 
 pip install matplotlib 
 #sudo pip install pyopencv
